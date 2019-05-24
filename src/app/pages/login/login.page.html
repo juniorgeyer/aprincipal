@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Seja Bem-Vinda!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding  class="masters">
+
+
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+          <div text-center>
+            <img class="circle-pic"
+            src="assets/imgs/aprincipal.png" />
+          </div>
+
+          <div padding>
+            <ion-item>
+              <ion-input text-center name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input text-center name="password" type="password" placeholder="Password" ngModel required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" routerLink="/menu/first"  expand="block">Login</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+</ion-content>

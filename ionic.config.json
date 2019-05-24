@@ -1,0 +1,7 @@
+{
+  "name": "aprincipal",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

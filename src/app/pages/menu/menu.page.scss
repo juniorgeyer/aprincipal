@@ -1,0 +1,10 @@
+.active-item {
+    border-left: 8px solid var(--ion-color-primary);
+}
+
+.circle-pic{
+    width:200px;
+    height:200px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}

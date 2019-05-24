@@ -1,0 +1,65 @@
+<ion-split-pane>
+  <ion-menu contentId="content">
+
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+          <div text-center>
+            <img class="circle-pic"
+            src="assets/imgs/aprincipal.png" />
+          </div>
+
+          <div padding>
+            <ion-item>
+              <ion-label>Nome da Pessoa</ion-label>
+            </ion-item>
+            <ion-item>
+
+            </ion-item>
+          </div>
+          <ion-segment>
+            <ion-segment-button  value="friends">
+              <ion-label color="secondary">Menino</ion-label>
+            </ion-segment-button>
+            <ion-segment-button  value="enemies">
+              <ion-label color="primary">Menina</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+          <div padding>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+          <ion-item [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(p.url)">
+            <ion-label>
+              {{ p.title }}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-item tappable routerLink="/login" routerDirection="root">
+          <ion-icon name="log-out" slot="start"></ion-icon>
+          Logout
+        </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+
+  </ion-menu>
+
+  <ion-router-outlet id="content" main></ion-router-outlet>
+
+</ion-split-pane>
