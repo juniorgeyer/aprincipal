@@ -9,116 +9,105 @@
 
 <ion-content padding>
 
+  <div *ngIf="bath.length != 0">
   <ion-label>
     <h1>Banho</h1>
   </ion-label>
   <br>
 
-  <ion-item>
-    <!-- <ion-icon name="star" slot="start"></ion-icon> -->
+  <ion-item *ngFor="let product of bath">
+    <!--<ion-icon name="star" slot="start"></ion-icon>-->
     <ion-label>
-      <h2>Armário</h2>
-      <p>Descrição</p>
+      <h2>{{product?.name}}</h2>
+      <p>{{product?.price}}</p>
     </ion-label>
-    <ion-button fill="outline" slot="end">+</ion-button>
-    <h3>5</h3>
-    <ion-button fill="outline" slot="end">-</ion-button>
-  </ion-item>
-
-  <ion-item>
-    <!-- <ion-icon name="star" slot="start"></ion-icon> -->
-    <ion-label>
-      <h2>Berço</h2>
-      <p>Descrição</p>
-    </ion-label>
-    <ion-button fill="outline" slot="end">+</ion-button>
-    <h3>1</h3>
-    <ion-button fill="outline" slot="end">-</ion-button>
-  </ion-item>
-
-  <ion-item>
-    <!-- <ion-icon name="star" slot="start"></ion-icon> -->
-    <ion-label>
-      <h2>Guarda-roupa</h2>
-      <p>Descrição</p>
-    </ion-label>
-    <ion-button fill="outline" slot="end">+</ion-button>
-    <h3>1</h3>
-    <ion-button fill="outline" slot="end">-</ion-button>
-  </ion-item>
-
-  <ion-item>
-    <!-- <ion-icon name="star" slot="start"></ion-icon> -->
-    <ion-label>
-      <h2>Lençol</h2>
-      <p>Descrição</p>
-    </ion-label>
-    <ion-button fill="outline" slot="end">+</ion-button>
-    <h3>2</h3>
-    <ion-button fill="outline" slot="end">-</ion-button>
+    <ion-button fill="outline" slot="end" (click)="increaseQuantity(product, bath)">+</ion-button>
+    <h3>{{product?.quantity}}</h3>
+    <ion-button fill="outline" slot="end" (click)="decreaseQuantity(product, bath)">-</ion-button>
   </ion-item>
 
   <br>
   <br>
   <br>
+</div>
 
+  <div *ngIf="hygiene.length != 0">
   <ion-label>
     <h1>Higiene</h1>
   </ion-label>
   <br>
-
-  <ion-item>
-    <!-- <ion-icon name="star" slot="start"></ion-icon> -->
+  <ion-item *ngFor="let product of hygiene">
+    <!--<ion-icon name="star" slot="start"></ion-icon>-->
     <ion-label>
-      <h2>Travesseiro</h2>
-      <p>Descrição</p>
+      <h2>{{product?.name}}</h2>
+      <p>{{product?.price}}</p>
     </ion-label>
-    <h3>2</h3>
-    <ion-button fill="outline" slot="end">-</ion-button>
+    <ion-button fill="outline" slot="end" (click)="increaseQuantity(product, hygiene)">+</ion-button>
+    <h3>{{product?.quantity}}</h3>
+    <ion-button fill="outline" slot="end" (click)="decreaseQuantity(product, hygiene)">-</ion-button>
   </ion-item>
 
-  <ion-item>
-    <!-- <ion-icon name="star" slot="start"></ion-icon> -->
-    <ion-label>
-      <h2>Cama</h2>
-      <p>Descrição</p>
-    </ion-label>
-    <h3>1</h3>
-    <ion-button fill="outline" slot="end">-</ion-button>
-  </ion-item>
-
-  <ion-item>
-    <!-- <ion-icon name="star" slot="start"></ion-icon> -->
-    <ion-label>
-      <h2>Cortina</h2>
-      <p>Descrição</p>
-    </ion-label>
-    <h3>2</h3>
-    <ion-button fill="outline" slot="end">-</ion-button>
-  </ion-item>
   <br>
   <br>
   <br>
+</div>
+
+  <div *ngIf="tour.length != 0">
   <ion-label>
     <h1>Passeio</h1>
   </ion-label>
   <br>
+  <ion-item *ngFor="let product of tour">
+    <!--<ion-icon name="star" slot="start"></ion-icon>-->
+    <ion-label>
+      <h2>{{product?.name}}</h2>
+      <p>{{product?.price}}</p>
+    </ion-label>
+    <ion-button fill="outline" slot="end" (click)="increaseQuantity(product, tour)">+</ion-button>
+    <h3>{{product?.quantity}}</h3>
+    <ion-button fill="outline" slot="end" (click)="decreaseQuantity(product, tour)">-</ion-button>
+  </ion-item>
 
   <br>
   <br>
   <br>
+</div>
+
+  <div *ngIf="mom.length != 0">
   <ion-label>
     <h1>Para a Mamãe</h1>
   </ion-label>
   <br>
+  <ion-item *ngFor="let product of mom">
+    <!--<ion-icon name="star" slot="start"></ion-icon>-->
+    <ion-label>
+      <h2>{{product?.name}}</h2>
+      <p>{{product?.price}}</p>
+    </ion-label>
+    <ion-button fill="outline" slot="end" (click)="increaseQuantity(product, mom)">+</ion-button>
+    <h3>{{product?.quantity}}</h3>
+    <ion-button fill="outline" slot="end" (click)="decreaseQuantity(product, mom)">-</ion-button>
+  </ion-item>
 
   <br>
   <br>
   <br>
+</div>
+
+<div *ngIf="several.length != 0">
   <ion-label>
     <h1>Diversos</h1>
   </ion-label>
   <br>
-
-
+  <ion-item *ngFor="let product of several">
+    <!--<ion-icon name="star" slot="start"></ion-icon>-->
+    <ion-label>
+      <h2>{{product?.name}}</h2>
+      <p>{{product?.price}}</p>
+    </ion-label>
+    <ion-button fill="outline" slot="end" (click)="increaseQuantity(product, several)">+</ion-button>
+    <h3>{{product?.quantity}}</h3>
+    <ion-button fill="outline" slot="end" (click)="decreaseQuantity(product, several)">-</ion-button>
+  </ion-item>
+</div>
 </ion-content>
