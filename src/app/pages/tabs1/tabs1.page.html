@@ -9,6 +9,22 @@
 
 <ion-content padding>
 
+  
+  <ng-container *ngIf="!suggestedProducts || suggestedProducts.length == 0">
+    <div *ngFor="let n of [0,1,2,3,4]" padding>
+      <ion-skeleton-text></ion-skeleton-text>
+      <p>
+        <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+      </p>
+    </div>
+    <div *ngFor="let n of [0,1,2]" padding>
+      <ion-skeleton-text></ion-skeleton-text>
+      <p>
+        <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+      </p>
+    </div>
+  </ng-container>
+
   <div *ngIf="bath.length != 0">
   <ion-label>
     <h1>Banho</h1>
@@ -110,4 +126,10 @@
     <ion-button fill="outline" slot="end" (click)="decreaseQuantity(product, several)">-</ion-button>
   </ion-item>
 </div>
+
+<ion-fab *ngIf="saveButton" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="saveChanges()">
+    Salvar
+  </ion-fab-button>
+</ion-fab>
 </ion-content>
